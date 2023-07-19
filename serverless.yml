@@ -3,8 +3,7 @@ service: nestjs-lambda
 provider:
   name: aws
   runtime: nodejs18.x
-  memorySize: 256
-  timeout: 15
+  region: us-east-2
 
 functions:
   app:
