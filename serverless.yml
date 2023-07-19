@@ -1,0 +1,14 @@
+service: nestjs-lambda
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  memorySize: 256
+  timeout: 15
+
+functions:
+  app:
+    handler: dist/main.handler
+    events:
+      - http: 'ANY {proxy+}'
+      - http: 'ANY /'
