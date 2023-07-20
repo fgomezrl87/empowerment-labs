@@ -8,9 +8,9 @@ export class DbService {
 
   constructor(private configService: ConfigService) {
     AWS.config.update({
-      accessKeyId: this.configService.get('AWS_ACCESS_KEY_ID'),
-      secretAccessKey: this.configService.get('AWS_SECRET_ACCESS_KEY'),
-      region: this.configService.get('AWS_REGION'),
+      accessKeyId: this.configService.get('_AWS_ACCESS_KEY_ID'),
+      secretAccessKey: this.configService.get('_AWS_SECRET_ACCESS_KEY'),
+      region: this.configService.get('_AWS_REGION'),
     });
 
     this.dynamoDb = new AWS.DynamoDB.DocumentClient();
