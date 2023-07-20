@@ -15,3 +15,13 @@ functions:
 
 plugins:
   - serverless-offline
+
+package:
+  exclude:
+    - .git/**
+    - node_modules/**
+    - .serverless/**
+    - .env
+  include:
+    - dist/**
+
