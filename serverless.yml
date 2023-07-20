@@ -4,14 +4,14 @@ provider:
   name: aws
   runtime: nodejs18.x
   stage: ${opt:stage, 'dev'}
-  region: ${{ secrets.AWS_REGION }}
+  region: us-east-2
 
 functions:
   app:
     handler: dist/lambda.handler
     events:
       - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http: 'ANY /{proxy+}'
 
 plugins:
   - serverless-offline
