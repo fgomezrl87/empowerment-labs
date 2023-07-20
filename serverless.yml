@@ -19,19 +19,21 @@ provider:
 
 functions:
   app:
-    handler: dist/lambda.handler
+    handler: src/lambda.handler
     events:
       - http: ANY /
       - http: 'ANY /{proxy+}'
 
 plugins:
   - serverless-offline
+  - serverless-bundle
 
 package:
-  exclude:
-    - .git/**
-    - .serverless/**
-    - .env
-  include:
-    - node_modules/**
-    - dist/**
+  individually: true
+
+custom:
+  bundle:
+    sourcemaps: false
+    copyFiles:
+      - from: 'src/views'
+        to: '/src/views'
