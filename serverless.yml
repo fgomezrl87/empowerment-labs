@@ -1,18 +1,19 @@
 service: nestjs-lambda
 
+frameworkVersion: '3'
+
+plugins:
+  - serverless-jetpack
+
 provider:
   name: aws
-  runtime: nodejs18.x
+  runtime: nodejs14.x
   region: us-east-2
 
 functions:
   app:
     handler: dist/main.handler
     events:
-      - http: 
+      - http:
+          method: any
           path: /{proxy+}
-          method: any
-      - http: 
-          path: /
-          method: any
-
