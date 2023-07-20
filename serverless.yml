@@ -5,6 +5,17 @@ provider:
   runtime: nodejs18.x
   stage: ${opt:stage, 'dev'}
   region: us-east-2
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'dynamodb:GetItem'
+        - 'dynamodb:PutItem'
+        - 'dynamodb:UpdateItem'
+        - 'dynamodb:DeleteItem'
+        - 'dynamodb:Scan'
+        - 'dynamodb:Query'
+      Resource: 
+        - 'arn:aws:dynamodb:us-east-2:446195074667:table/test*'
 
 functions:
   app:
