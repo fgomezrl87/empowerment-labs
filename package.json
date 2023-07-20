@@ -26,7 +26,8 @@
     "@nestjs/platform-express": "^10.0.0",
     "aws-sdk": "^2.1416.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "aws-serverless-express": "^3.4.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
@@ -39,7 +40,6 @@
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.59.11",
     "@typescript-eslint/parser": "^5.59.11",
-    "aws-serverless-express": "^3.4.0",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",

@@ -39,8 +39,5 @@ jobs:
     - name: Construir la aplicación
       run: npm run build
 
-    - name: Empaquetar la aplicación
-      run: npm run package
-
     - name: Desplegar con Serverless
       run: serverless deploy

@@ -19,9 +19,8 @@ plugins:
 package:
   exclude:
     - .git/**
-    - node_modules/**
     - .serverless/**
     - .env
   include:
+    - node_modules/**
     - dist/**
-
