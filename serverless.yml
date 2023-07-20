@@ -9,5 +9,10 @@ functions:
   app:
     handler: dist/main.handler
     events:
-      - http: 'ANY {proxy+}'
-      - http: 'ANY /'
+      - http: 
+          path: /{proxy+}
+          method: any
+      - http: 
+          path: /
+          method: any
+
