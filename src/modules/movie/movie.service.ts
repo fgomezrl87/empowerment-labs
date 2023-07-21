@@ -33,8 +33,19 @@ export class MovieService {
         voteCount: movie.vote_count
       }
 
-      // Put the item into the DynamoDB table
       await this.dbService.putItem('test_Movie', movieData);
     }
   }
+
+  async getPopularMovies(): Promise<any> {
+    const params = {
+      TableName: 'test_Movie',
+    };
+
+    const data = await this.dbService.scan(params);
+    const sortedItems = data.Items.sort((a, b) => b.popularity - a.popularity).slice(0, 3);
+
+    return sortedItems;
+  }
+
 }

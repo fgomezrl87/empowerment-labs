@@ -18,4 +18,10 @@ export class MovieController {
       }, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
+
+  @Get('popular')
+  async getPopularMovies() {
+    return await this.movieService.getPopularMovies();
+  }
+
 }

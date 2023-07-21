@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import * as AWS from 'aws-sdk';
 import { ConfigService } from '@nestjs/config';
+import { DynamoDB } from 'aws-sdk';
 
 @Injectable()
 export class DbService {
@@ -30,6 +31,22 @@ export class DbService {
         } else {
           console.log('PutItem succeeded:', JSON.stringify(item, null, 2));
           resolve();
+        }
+      });
+    });
+  }
+
+  async query(params): Promise<DynamoDB.DocumentClient.QueryOutput> {
+    return this.dynamoDb.query(params).promise();
+  }
+
+  async scan(params: AWS.DynamoDB.DocumentClient.ScanInput): Promise<AWS.DynamoDB.DocumentClient.ScanOutput> {
+    return new Promise((resolve, reject) => {
+      this.dynamoDb.scan(params, (error, data) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(data);
         }
       });
     });
