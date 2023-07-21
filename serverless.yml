@@ -20,6 +20,7 @@ provider:
 functions:
   app:
     handler: dist/lambda.handler
+    timeout: 60
     events:
       - http: ANY /
       - http: 'ANY /{proxy+}'

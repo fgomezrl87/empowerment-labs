@@ -1,9 +1,7 @@
 export interface Movie {
-    movieId: string;
-    movieApiId: string;
-    movieIMDBId: string;
+    movieId: number;
     language: string;
-    genres: string[];
+    genres: number[];
     originalLanguage: string;
     title: string;
     overview: string;
