@@ -12,7 +12,7 @@ Este es un proyecto construido con NestJS y desplegado en AWS Lambda usando Serv
 
 ## Clonar el repositorio
 
-Para clonar este repositorio, abre una terminal y ejecuta el siguiente comando:
+Para clonar este repositorio, se debe abrir una terminal y ejecuta el siguiente comando:
 
 ```
 git clone https://github.com/fgomezrl87/empowerment-labs.git
@@ -20,7 +20,7 @@ git clone https://github.com/fgomezrl87/empowerment-labs.git
 
 ## Instalación
 
-Navega dentro del directorio del proyecto clonado y ejecuta:
+Navegar dentro del directorio del proyecto clonado y ejecutar:
 
 ```
 npm install
@@ -28,11 +28,15 @@ npm install
 
 ## Configuración
 
-Es necesario configurar el AWS_ACCESS_KEY_ID, el AWS_SECRET_ACCESS_KEY_ID y la región de tu AWS.
+Es necesario configurar el AWS_ACCESS_KEY_ID, el AWS_SECRET_ACCESS_KEY_ID y la región del AWS.
 
 ## Prueba Local
 
-Para probar el proyecto localmente, se debe ejecutar el siguiente comando:
+Para probar el proyecto localmente, se debe ejecutar los siguientes comandos:
+
+```
+npm run build
+```
 
 ```
 serverless offline
@@ -43,5 +47,5 @@ serverless offline
 Para desplegar en AWS, más específicamente en Lambda y creando un API Gateway, se debe ejecutar:
 
 ```
-serverless offline
+serverless deploy
 ```
