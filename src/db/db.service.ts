@@ -16,25 +16,22 @@ export class DbService {
     this.dynamoDb = new AWS.DynamoDB.DocumentClient();
   }
 
-  getHelloDB(yourIdValue: number): Promise<any> {
+  putItem(tableName: string, item: any): Promise<void> {
     const params = {
-      TableName: 'test',
-      Key: {
-        'id': yourIdValue,
-      }
+      TableName: tableName,
+      Item: item,
     };
-  
+
     return new Promise((resolve, reject) => {
-      this.dynamoDb.get(params, (err, data) => {
+      this.dynamoDb.put(params, (err) => {
         if (err) {
-          console.error("Unable to get item. Error:", JSON.stringify(err, null, 2));
+          console.error('Unable to put item. Error:', JSON.stringify(err, null, 2));
           reject(err);
         } else {
-          console.log("GetItem succeeded:", JSON.stringify(data, null, 2));
-          resolve(data);
+          console.log('PutItem succeeded:', JSON.stringify(item, null, 2));
+          resolve();
         }
       });
     });
   }
-x
 }
