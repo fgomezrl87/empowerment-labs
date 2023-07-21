@@ -46,6 +46,23 @@ export class MovieService {
     const sortedItems = data.Items.sort((a, b) => b.popularity - a.popularity).slice(0, 3);
 
     return sortedItems;
+  }  
+
+  async searchMovieByTitle(title: string): Promise<any> {
+    const params = {
+      TableName: 'test_Movie',
+      IndexName: 'title-index',
+      KeyConditionExpression: '#title = :title',
+      ExpressionAttributeNames: {
+        '#title': 'title',
+      },
+      ExpressionAttributeValues: {
+        ':title': title,
+      },
+    };
+
+    return await this.dbService.query(params);
   }
+
 
 }
