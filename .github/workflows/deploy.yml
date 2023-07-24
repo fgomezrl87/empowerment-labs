@@ -35,6 +35,8 @@ jobs:
         echo _AWS_REGION=${{ secrets.AWS_REGION }} >> .env
         echo _AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} >> .env
         echo _AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} >> .env
+        echo TMDB_API_KEY=${{ secrets.TMDB_API_KEY }} >> .env
+        echo TMDB_READ_ACCESS_TOKEN=${{ secrets.TMDB_READ_ACCESS_TOKEN }} >> .env
         echo JWT_SECRET=${{ secrets.JWT_SECRET }} >> .env
 
     - name: Construir la aplicación

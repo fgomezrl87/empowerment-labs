@@ -28,7 +28,7 @@ npm install
 
 ## Configuración
 
-Es necesario configurar el AWS_ACCESS_KEY_ID, el AWS_SECRET_ACCESS_KEY_ID y la región del AWS.
+Es necesario configurar el AWS_ACCESS_KEY_ID, el AWS_SECRET_ACCESS_KEY_ID, la región del AWS, el secret para JWT y las credenciales de la página TMDB
 
 ## Prueba Local
 
@@ -49,3 +49,21 @@ Para desplegar en AWS, más específicamente en Lambda y creando un API Gateway,
 ```
 serverless deploy
 ```
+
+## Rutas
+
+La URL en el ambiente de pruebas:
+
+```
+http://localhost:3000
+```
+
+La URL en el ambiente de AWS Lambda:
+
+```
+https://jayyt5mk49.execute-api.us-east-2.amazonaws.com
+```
+
+## Proceso del Login para usar el endpoint
+
+Deben enviar por el método POST la variable userId a la ruta `/dev/auth/login`. Obtendrán un token que debe ser enviado en la cabecera como Bearer para usar el resto de endpoints. La validez del token es de una hora.
