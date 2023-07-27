@@ -67,3 +67,16 @@ https://jayyt5mk49.execute-api.us-east-2.amazonaws.com
 ## Proceso del Login para usar el endpoint
 
 Deben enviar por el método POST la variable userId a la ruta `/dev/auth/login`. Obtendrán un token que debe ser enviado en la cabecera como Bearer para usar el resto de endpoints. La validez del token es de una hora.
+
+## Endpoints disponibles
+
+Poblar base de datos dynamodb con las películas obtenidas en TMDB: GET `/dev/movie/populate`
+
+Obtener las 3 películas más populates que hay en DynamoDB: GET `/dev/movie/popular`
+
+Buscar una película de DynamoDB por título: GET `/dev/movie/search?query=nombre_de_la_pelicula`
+
+Añadir una nota a una película: POST `/dev/movienote`
+- movieId: number
+- noteTitle: string
+- description: string

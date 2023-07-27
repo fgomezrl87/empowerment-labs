@@ -1,5 +1,5 @@
 export interface MovieNote {
-    movieId: string;
+    movieId: number;
     userId: string;
     noteTitle: string;
     description: string;
